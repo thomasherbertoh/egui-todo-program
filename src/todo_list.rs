@@ -18,13 +18,11 @@ impl eframe::App for TodoList {
     fn update(&mut self, ctx: &Context, frame: &mut eframe::Frame) {
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             egui::menu::bar(ui, |ui| {
-                egui::menu::bar(ui, |ui| {
-                    if ui.button("Quit").clicked() {
-                        self.save_to_json().unwrap();
-                        frame.quit();
-                    }
-                })
-            });
+                if ui.button("Quit").clicked() {
+                    self.save_to_json().unwrap();
+                    frame.quit();
+                }
+            })
         });
 
         egui::CentralPanel::default().show(ctx, |ui| {
