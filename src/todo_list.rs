@@ -16,6 +16,7 @@ impl Default for TodoList {
 
 impl eframe::App for TodoList {
     fn update(&mut self, ctx: &Context, frame: &mut eframe::Frame) {
+        ctx.set_visuals(egui::Visuals::dark());
         egui::TopBottomPanel::top("top_panel").show(ctx, |ui| {
             egui::menu::bar(ui, |ui| {
                 if ui.button("Quit").clicked() {
