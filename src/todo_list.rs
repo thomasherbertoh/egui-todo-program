@@ -21,7 +21,7 @@ impl eframe::App for TodoList {
             egui::menu::bar(ui, |ui| {
                 if ui.button("Quit").clicked() {
                     self.save_to_json().unwrap();
-                    frame.quit();
+                    frame.close();
                 }
             })
         });
